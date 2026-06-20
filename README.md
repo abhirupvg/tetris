@@ -6,12 +6,12 @@ A 3D Tetris experience built with Three.js, featuring realistic PBR materials, H
 
 ## Features
 
-- **Realistic 3D Rendering** — PBR materials with clearcoat, HDRI environment reflections, soft shadows, and UnrealBloom post-processing
-- **Full Tetris Gameplay** — SRS rotation with wall kicks, 7-bag randomizer, hold piece, ghost piece, lock delay, DAS
-- **Visual Polish** — Particle effects on line clear, emissive block glow, camera drift, ambient starfield
-- **Sound Design** — 8 game sound effects + atmospheric ambient background music
-- **Clean UI** — Glassmorphism panels, smooth animations, score/level/lines tracking, next piece queue, hold preview
-- **Controls** — Full keyboard support with DAS (Delayed Auto Shift)
+- **Realistic 3D Rendering** : PBR materials with clearcoat, HDRI environment reflections, soft shadows, and UnrealBloom post-processing
+- **Full Tetris Gameplay** : SRS rotation with wall kicks, 7-bag randomizer, hold piece, ghost piece, lock delay, DAS
+- **Visual Polish** : Particle effects on line clear, emissive block glow, camera drift, ambient starfield
+- **Sound Design** : 8 game sound effects + atmospheric ambient background music
+- **Clean UI** : Glassmorphism panels, smooth animations, score/level/lines tracking, next piece queue, hold preview
+- **Controls** : Full keyboard support with DAS (Delayed Auto Shift)
 
 ## Controls
 
