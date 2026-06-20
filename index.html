@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tetris 3D</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap" rel="stylesheet" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="game-canvas"></canvas>
+
+  <!-- UI Overlay -->
+  <div id="ui-overlay">
+    <!-- Music toggle -->
+    <button id="music-toggle" class="music-toggle" title="Toggle Music">
+      <span class="music-on">&#9835;</span>
+      <span class="music-off">&#9835;</span>
+    </button>
+
+    <!-- Left panel: Hold + Controls -->
+    <div class="ui-panel left-panel">
+      <div class="panel-section">
+        <div class="panel-label">HOLD</div>
+        <div id="hold-piece" class="hold-container"></div>
+      </div>
+      <div class="panel-section controls-section">
+        <div class="panel-label">CONTROLS</div>
+        <div class="controls-list">
+          <div class="control-row"><kbd>&larr;</kbd><kbd>&rarr;</kbd><span>Move</span></div>
+          <div class="control-row"><kbd>&darr;</kbd><span>Soft Drop</span></div>
+          <div class="control-row"><kbd>&uarr;</kbd><span>Rotate</span></div>
+          <div class="control-row"><kbd>Z</kbd><span>Rotate CCW</span></div>
+          <div class="control-row"><kbd>Space</kbd><span>Hard Drop</span></div>
+          <div class="control-row"><kbd>C</kbd><span>Hold</span></div>
+          <div class="control-row"><kbd>P</kbd><span>Pause</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right panel: Score + Next -->
+    <div class="ui-panel right-panel">
+      <div class="panel-section">
+        <div class="panel-label">SCORE</div>
+        <div id="score" class="stat-value">0</div>
+      </div>
+      <div class="panel-section">
+        <div class="panel-label">LEVEL</div>
+        <div id="level" class="stat-value">1</div>
+      </div>
+      <div class="panel-section">
+        <div class="panel-label">LINES</div>
+        <div id="lines" class="stat-value">0</div>
+      </div>
+      <div class="panel-section next-section">
+        <div class="panel-label">NEXT</div>
+        <div id="next-pieces" class="next-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Line clear text -->
+  <div id="line-clear-text"></div>
+
+  <!-- Loading overlay -->
+  <div id="loading-overlay" class="overlay show">
+    <div class="overlay-content">
+      <div class="loading-spinner"></div>
+      <p>Loading assets...</p>
+    </div>
+  </div>
+
+  <!-- Start overlay -->
+  <div id="start-overlay" class="overlay">
+    <div class="overlay-content">
+      <h1 class="title">TETRIS<span class="title-3d">3D</span></h1>
+      <p class="subtitle">A 3D Tetris Experience</p>
+      <div class="start-button">Press <kbd>Enter</kbd> to Start</div>
+    </div>
+  </div>
+
+  <!-- Pause overlay -->
+  <div id="pause-overlay" class="overlay">
+    <div class="overlay-content">
+      <h2 class="pause-title">PAUSED</h2>
+      <div class="start-button">Press <kbd>P</kbd> to Resume</div>
+    </div>
+  </div>
+
+  <!-- Game over overlay -->
+  <div id="gameover-overlay" class="overlay">
+    <div class="overlay-content">
+      <h2 class="gameover-title">GAME OVER</h2>
+      <div class="gameover-stats">
+        <div class="gameover-stat">
+          <span class="stat-label">Score</span>
+          <span id="final-score" class="stat-number">0</span>
+        </div>
+        <div class="gameover-stat">
+          <span class="stat-label">Level</span>
+          <span id="final-level" class="stat-number">0</span>
+        </div>
+        <div class="gameover-stat">
+          <span class="stat-label">Lines</span>
+          <span id="final-lines" class="stat-number">0</span>
+        </div>
+      </div>
+      <div class="start-button">Press <kbd>Enter</kbd> to Play Again</div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
